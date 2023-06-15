@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include "calc3.h"
+#include "simpleC.h"
 
 /* prototypes */
 nodeType *opr(int oper, int nops, ...);

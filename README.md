@@ -20,8 +20,8 @@ Steps to run the compiler:
   Clone the project
   
   Run:
-  1. bison -y -d calc3.y
-  2. flex calc3.l
+  1. bison -y -d simpleC.y
+  2. flex simpleC.l
   3. gcc y.tab.c lex.yy.c calc3b.c -o calc3b.exe
   4. ./calc3b.exe
 
