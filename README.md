@@ -22,7 +22,7 @@ Steps to run the compiler:
   Run:
   1. bison -y -d calc3.y
   2. flex calc3.l
-  3. gcc y.tab.c lex.yy.x calc3b.c -o calc3b.exe
+  3. gcc y.tab.c lex.yy.c calc3b.c -o calc3b.exe
   4. ./calc3b.exe
 
 To clean the folder safely

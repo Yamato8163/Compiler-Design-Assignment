@@ -10,18 +10,18 @@ void yyerror(char *);
 %%
 
 [a-z]       { 
-                yylval.sIndex = *yytext - 'a';
-                return VARIABLE;
+                yylval.symbolIndex = *yytext - 'a';
+                return Var;
             }
 
 0           {
-                yylval.iValue = atoi(yytext);
-                return INTEGER;
+                yylval.indexValue = atoi(yytext);
+                return INT;
             }
 
 [1-9][0-9]* {
-                yylval.iValue = atoi(yytext);
-                return INTEGER;
+                yylval.indexValue = atoi(yytext);
+                return INT;
             }
 
 [-()<>=+*/;{}.] {

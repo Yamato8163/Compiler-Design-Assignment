@@ -17,13 +17,13 @@ int sym[26];                    /* symbol table */
 %}
 
 %union {
-    int iValue;                 /* integer value */
-    char sIndex;                /* symbol table index */
+    int indexValue;                 /* integer value */
+    char symbolIndex;                /* symbol table index */
     nodeType *nPtr;             /* node pointer */
 };
 
-%token <iValue> INTEGER
-%token <sIndex> VARIABLE
+%token <indexValue> INT
+%token <symbolIndex> Var
 %token WHILE IF PRINT
 %nonassoc IFX
 %nonassoc ELSE
@@ -50,7 +50,7 @@ stmt:
           ';'                            { $$ = opr(';', 2, NULL, NULL); }
         | expr ';'                       { $$ = $1; }
         | PRINT expr ';'                 { $$ = opr(PRINT, 1, $2); }
-        | VARIABLE '=' expr ';'          { $$ = opr('=', 2, id($1), $3); }
+        | Var '=' expr ';'          { $$ = opr('=', 2, id($1), $3); }
         | WHILE '(' expr ')' stmt        { $$ = opr(WHILE, 2, $3, $5); }
         | IF '(' expr ')' stmt %prec IFX { $$ = opr(IF, 2, $3, $5); }
         | IF '(' expr ')' stmt ELSE stmt { $$ = opr(IF, 3, $3, $5, $7); }
@@ -63,8 +63,8 @@ stmt_list:
         ;
 
 expr:
-          INTEGER               { $$ = con($1); }
-        | VARIABLE              { $$ = id($1); }
+          INT               { $$ = con($1); }
+        | Var              { $$ = id($1); }
         | '-' expr %prec UMINUS { $$ = opr(UMINUS, 1, $2); }
         | expr '+' expr         { $$ = opr('+', 2, $1, $3); }
         | expr '-' expr         { $$ = opr('-', 2, $1, $3); }
