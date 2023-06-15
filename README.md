@@ -3,7 +3,7 @@ This repo contains assignment of Compiler Design by BITS-Pilani M-tech SE
 
 Made by:
 Rahul Anand 
-Tushar Saraj
+& Tushar Saraj
 
 Steps to run the compiler:
 
