@@ -2,10 +2,8 @@
 This repo contains assignment of Compiler Design by BITS-Pilani M-tech SE
 
 Made by:
-Abhishek Mondal
-Sheetal Raj
-Koushtabh Ghosh
-Anuj Arora
+Rahul Anand 
+Tushar Saraj
 
 Steps to run the compiler:
 
